@@ -9,16 +9,14 @@ $`d = 𝑎\sqrt{2}`$
 
 ### Алгоритамска шема
 ```mermaid
-  flowchart TD
-    A([Početak])
-    B[/Unos vrednosti a/]
-    C[Izračunavanje\n d = a * sqrt(2)]
-    D[\Ispis rezultata d/]
-    E([Kraj])
-
-    A --> B --> C --> D --> E
+  graph TD
+    A[Унеси број а]--->B
+    B[Израчунавање d = a * sqrt(2)]--->C
+    C[Испис резултата d]--->D
+    D[Kraj]
 ```
 
+## Решење
 ```csharp
 using System;
 
@@ -26,21 +24,34 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Unesi dužinu stranice kvadrata a: ");
+        Console.Write("Unesi duzinu stranice kvadrata a: ");
         double a = double.Parse(Console.ReadLine());
 
         double d = a * Math.Sqrt(2);
 
-        Console.WriteLine("Dužina dijagonale kvadrata je: " + d);
+        Console.WriteLine("Duzina dijagonale kvadrata je: " + d);
     }
 }
 ```
-
 ### Тест примери
 
-| Тест | Улаз (a) | Излаз (d = a·√2) |
-|------|-----------|------------------|
-| 1    | 1         | 1.41421356       |
-| 2    | 2         | 2.82842712       |
-| 3    | 5         | 7.07106781       |
-| 4    | 10        | 14.14213562      |
+Тест пример 1:
+
+```text
+Unesi duzinu stranice kvadrata a: 67
+Duzina dijagonale kvadrata je: 94.7523086789974
+```
+
+Тест пример 2:
+
+```text
+Unesi duzinu stranice kvadrata a: 23
+Duzina dijagonale kvadrata je: 32.5269119345812
+```
+
+### Објекти
+
+| Редни број | Променљива  | Тип променљиве   |
+|------------|-------------|------------------|
+| 1.         | a           | 'double'         |
+| 2.         | d           | 'double'         |
